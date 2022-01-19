@@ -1,0 +1,13 @@
+from collections import Counter 
+
+def word_count(filename):
+    with open(filename)as f:
+        return Counter(f.read().split())
+    
+try:
+    file = input("enter the name of the file you want to count words")
+    contador = word_count(file)
+    for i in contador:
+        print(i,"  ", contador[i])
+except FileNotFoundError:
+    print("file not found")
